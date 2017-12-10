@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>To Do App</title>
+</head>
+
+
+<body>
+<h1> Johnny's To Do App </h1>
+
+<table width="400" border="1">
+
+  <tr>
+    <th> TASK </th>
+    <th> OWNER </th>
+    <th> PRIORITY </th>
+  </tr>
+
+  <tr>
+    <td style="height:15px; width: 200px;"> {{ task1 }} </td>
+    <td style="height:15px; width: 200px;"> {{ email1 }} </td>
+    <td style="height:15px; width: 200px;"> {{ priority1 }} </td>
+  </tr>
+  <tr>
+    <td style="height:15px; width: 200px;"> {{ task2 }} </td>
+    <td style="height:15px; width: 200px;">{{ email2 }} </td>
+    <td style="height:15px; width: 200px;">{{ priority2 }} </td>
+  </tr>
+  <tr>
+    <td style="height:15px; width: 200px;"> {{ task3 }} </td>
+    <td style="height:15px; width: 200px;">{{ email3}} </td>
+    <td style="height:15px; width: 200px;">{{ priority3 }} </td>
+  </tr>
+
+</table>
+
+
+<h2>Add To Do Items</h2>
+
+<form action ="/submit" method="POST">
+
+  <p>
+    <label>Task 1: </label>
+    <input type="text" name="task1"></input><br>
+
+    <label>Email 1: </label>
+    <input type="text" name="email1"></input><br>
+
+    <label> Priority 1:</label>
+    <select name="priority1">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option><br>
+    </select><br>
+  </p>
+
+  <p>
+  <label>Task 2: </label>
+  <input type="text" name="task2"></input><br>
+
+  <label>Email 2:</label>
+  <input type="text" name="email2"></input><br>
+
+  <label>Priority 2:</label>
+  <select name="priority2">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option><br>
+  </select><br>
+  </p>
+
+  <p>
+  <label>Task 3: </label>
+  <input type="text" name="task3"></input><br>
+
+  <label>Email 3: </label>
+  <input type="text" name="email3"></input><br>
+
+  <label>Priority 3:</label>
+  <select name="priority3">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option><br>
+  </select><br>
+  </p>
+
+
+
+  <br><input type="submit" value="Add To Do's ">
+</form>
+
+
+<form action ="/clear" method="POST">
+  <input type="submit" value="Clear To Do's">
+</form>
+
+
+{% if error %}
+     <p class="error"><strong>ERROR:</strong> {{ error }}</p>
+{% endif %}
+
+
+</body>
+
+</html>
